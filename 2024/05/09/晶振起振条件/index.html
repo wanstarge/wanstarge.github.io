@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/star_32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/star_16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wanstarge.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="晶振起振条件   OSC2.jpg   补充：并联电阻不能太小，串联电阻不能太大。否则，在温度较低的情况下不易起振 1MΩ电阻适用于以下问题： 当发生程序启动慢或不运行时，建议给晶振并联1MΩ的电阻 在低温环境下振荡电路阻抗也会发生变化，当阻抗增加到一定程度时，晶振就会发生起振困难或不起振现象。这时，我们也需要给晶振并联1MΩ电阻  晶振参数以及匹配电容的计算 负载电容 \[C_{L}\cong\">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="晶振起振条件">
+<meta property="og:url" content="https://wanstarge.github.io/2024/05/09/%E6%99%B6%E6%8C%AF%E8%B5%B7%E6%8C%AF%E6%9D%A1%E4%BB%B6/index.html">
+<meta property="og:site_name" content="万星阁">
+<meta property="og:description" content="晶振起振条件   OSC2.jpg   补充：并联电阻不能太小，串联电阻不能太大。否则，在温度较低的情况下不易起振 1MΩ电阻适用于以下问题： 当发生程序启动慢或不运行时，建议给晶振并联1MΩ的电阻 在低温环境下振荡电路阻抗也会发生变化，当阻抗增加到一定程度时，晶振就会发生起振困难或不起振现象。这时，我们也需要给晶振并联1MΩ电阻  晶振参数以及匹配电容的计算 负载电容 \[C_{L}\cong\">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wanstarge.github.io/images/PCB/OSC2.jpg">
+<meta property="og:image" content="https://wanstarge.github.io/images/PCB/OSC1.jpg">
+<meta property="og:image" content="https://wanstarge.github.io/images/PCB/OSC3.jpg">
+<meta property="og:image" content="https://wanstarge.github.io/images/PCB/OSC4.jpg">
+<meta property="og:image" content="https://wanstarge.github.io/images/PCB/OSC5.jpg">
+<meta property="article:published_time" content="2024-05-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-04-05T04:19:04.607Z">
+<meta property="article:author" content="牧星">
+<meta property="article:tag" content="PCB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wanstarge.github.io/images/PCB/OSC2.jpg">
+
+
+<link rel="canonical" href="https://wanstarge.github.io/2024/05/09/%E6%99%B6%E6%8C%AF%E8%B5%B7%E6%8C%AF%E6%9D%A1%E4%BB%B6/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wanstarge.github.io/2024/05/09/%E6%99%B6%E6%8C%AF%E8%B5%B7%E6%8C%AF%E6%9D%A1%E4%BB%B6/","path":"2024/05/09/晶振起振条件/","title":"晶振起振条件"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>晶振起振条件 | 万星阁</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">万星阁</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">高山仰止,景行行止</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-resources"><a href="/resources/" rel="section"><i class="fa fa-download fa-fw"></i>resources</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%99%B6%E6%8C%AF%E8%B5%B7%E6%8C%AF%E6%9D%A1%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">晶振起振条件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%B6%E6%8C%AF%E5%8F%82%E6%95%B0%E4%BB%A5%E5%8F%8A%E5%8C%B9%E9%85%8D%E7%94%B5%E5%AE%B9%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">1.1.</span> <span class="nav-text">晶振参数以及匹配电容的计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%B6%E6%8C%AF%E8%B5%B7%E6%8C%AF%E7%9A%84%E8%AF%A6%E8%A7%A3"><span class="nav-number">1.2.</span> <span class="nav-text">晶振起振的详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%B6%E6%8C%AF%E7%9A%84%E8%A7%82%E6%B5%8B"><span class="nav-number">1.3.</span> <span class="nav-text">晶振的观测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E6%B3%A2%E5%99%A8"><span class="nav-number">1.3.1.</span> <span class="nav-text">示波器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%87%E7%94%A8%E8%A1%A8"><span class="nav-number">1.3.2.</span> <span class="nav-text">万用表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%91%E7%8E%87%E8%AE%A1"><span class="nav-number">1.3.3.</span> <span class="nav-text">频率计</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="牧星"
+      src="/images/mx.jpg">
+  <p class="site-author-name" itemprop="name">牧星</p>
+  <div class="site-description" itemprop="description">是非在己,毁誉由人,得失不论</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wanstarge" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wanstarge" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wanstarge@gmail.com" title="E-Mail → mailto:wanstarge@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/501936197" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;501936197" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.iconfont.cn/" title="https:&#x2F;&#x2F;www.iconfont.cn&#x2F;" rel="noopener" target="_blank">iconFont</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wanstarge.github.io/2024/05/09/%E6%99%B6%E6%8C%AF%E8%B5%B7%E6%8C%AF%E6%9D%A1%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/mx.jpg">
+      <meta itemprop="name" content="牧星">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="万星阁">
+      <meta itemprop="description" content="是非在己,毁誉由人,得失不论">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="晶振起振条件 | 万星阁">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          晶振起振条件
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-05-09 00:00:00" itemprop="dateCreated datePublished" datetime="2024-05-09T00:00:00+08:00">2024-05-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-04-05 12:19:04" itemprop="dateModified" datetime="2025-04-05T12:19:04+08:00">2025-04-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/PCB/" itemprop="url" rel="index"><span itemprop="name">PCB</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="晶振起振条件">晶振起振条件</h2>
+<figure>
+<img src="/images/PCB/OSC2.jpg" alt="OSC2.jpg" />
+<figcaption aria-hidden="true">OSC2.jpg</figcaption>
+</figure>
+<blockquote>
+<p>补充：并联电阻不能太小，串联电阻不能太大。否则，在温度较低的情况下不易起振
+1MΩ电阻适用于以下问题：
+当发生程序启动慢或不运行时，建议给晶振并联1MΩ的电阻
+在低温环境下振荡电路阻抗也会发生变化，当阻抗增加到一定程度时，晶振就会发生起振困难或不起振现象。这时，我们也需要给晶振并联1MΩ电阻</p>
+</blockquote>
+<h3 id="晶振参数以及匹配电容的计算">晶振参数以及匹配电容的计算</h3>
+<p>负载电容</p>
+<p><span
+class="math display">\[C_{L}\cong\frac{C_{G}*C_{D}}{C_{G}+C_{D}}+C_{S}\]</span></p>
+<figure>
+<img src="/images/PCB/OSC1.jpg" alt="OSC1.jpg" />
+<figcaption aria-hidden="true">OSC1.jpg</figcaption>
+</figure>
+<p>即负载电容跟晶体振荡电路输入管脚到GND的总电容CG
+、晶体振荡电路输出管脚到GND的总电容CD以及晶体本身的并联电容CS有关。</p>
+<p>我们知道晶体振荡电路输入管脚到GND的总电容一般由以下几部分组成，即：
+1. 需要外加晶振的单片机或其他IC管脚到GND之间的寄生电容Ci； 2.
+振荡输入端OSC_IN的PCB走线到GND之间的寄生电容Cpcb1； 3.
+电路上额外需要增加的并联到GND的外匹配电容 CL1</p>
+<p><span class="math display">\[C_{G}=C_{i}+C_{PCB1}+C_{L1}\]</span>
+同样的，晶体振荡电路输出管脚到GND的总电容一般由以下几部分组成，即: 1.
+需要外加晶振的单片机或者其他IC管脚到GND之间的寄生电容 Co 2.
+振荡输出端OSC_OUT的PCB走线到GND之间的寄生电容Cpcb2 3.
+电路上额外需要增加的并联到GND的外匹配电容 CL2</p>
+<p><span class="math display">\[C_{G}=C_{O}+C_{PCB2}+C_{L2}\]</span></p>
+<p>如上所述，我们应该通过需要外接晶振的单片机或者其他IC的资料确认寄生电容Ci和Co</p>
+<p>例如：</p>
+<figure>
+<img src="/images/PCB/OSC3.jpg" alt="OSC3.jpg" />
+<figcaption aria-hidden="true">OSC3.jpg</figcaption>
+</figure>
+<p>我们知道，在平时的电路设计中会要求晶体尽可能的靠近振荡电路，即走线尽量短并且对称，所以和
+的值应该很小，这里按照经验一般取0.2pF。
+为了保持晶体的负载平衡，即晶振电路输入输出的电容需保持一致，所以在实际应用中，往往取CG=CD,故代入公式有：</p>
+<p>12.5pf-1.3pf=CG/2=CD/2=11.2pF,即CD=CG=22.4pF</p>
+<p>故CL1=CL2=22.4pF-Ci-Cpcb1=22.4pF-0.2pF-0.6pF=21.6pF</p>
+<p>故选取22pF作为匹配值</p>
+<h3 id="晶振起振的详解">晶振起振的详解</h3>
+<p>巴克豪森准则：电子振荡器系统信号由输入到输出再反馈到输入的相差为360°，且环路增益≥1，为振荡器起振的必要条件</p>
+<p>一个简单振荡器想产生周期性的振荡，通常是以电压形式的输出，在持续不断地输出的同时，需要加入放大器以产生持续的反馈给到输入，由于放大器本身的输出在高频时相移太大会使整个反馈变成正的，从而产生振荡</p>
+<figure>
+<img src="/images/PCB/OSC4.jpg" alt="OSC4.jpg" />
+<figcaption aria-hidden="true">OSC4.jpg</figcaption>
+</figure>
+<figure>
+<img src="/images/PCB/OSC5.jpg" alt="OSC5.jpg" />
+<figcaption aria-hidden="true">OSC5.jpg</figcaption>
+</figure>
+<h3 id="晶振的观测">晶振的观测</h3>
+<h4 id="示波器">示波器</h4>
+<p>用示波器看波形是最直接的方法。因晶振波形的占空比为50%，所以测得的平均电压为1/2Vcc左右，晶振波形一般是正弦波或者方波，当输出波形是方波时，一般上升沿比较陡峭，且包含了较多的高频信号，这个时候就要保证测试的带宽足够，理论值是带宽是被测信号频率的2倍，实际测试方波时带宽应该是被测信号频率的10倍。
+除了带宽之外，在测试晶振时，还有一点应该重点注意：<strong>晶振对电容负载较敏感，探头电容相对较大，相当于一个很重的负载并联在晶振电路中</strong>，容易导致电路停振而得不出正确的测量结果。所以在进行晶振测试的时候，<strong>需要保证足够的带宽和较小的输入电容</strong></p>
+<h4 id="万用表">万用表</h4>
+<p>无源晶振具备两个管脚：频率输入脚与频率输出脚。若晶振已经起振，说明这两个管脚之间必然存在电压差，这样才会有流经的电流对晶片产生激励功率。所以，我们可以用万用表的直流电压档，测量晶振两个引脚的电压。起振的时候，晶振两端的电压一般为芯片供电电压Vcc的一半。
+但这里要注意，若芯片不良，则无法捕捉到晶振正在提供给它的正确的时钟信号。在这种情况之下，我们容易对晶振是否起振做出误判</p>
+<h4 id="频率计">频率计</h4>
+<p>使用频率计测量晶振频率输出脚位时，若有正常的波形（常见为方波，温补晶振有削峰正弦波输出）或正常频率信号输出，则可视为该晶振已经正常起振。</p>
+<blockquote>
+<p>最后，听声音判断晶振是否起振的方法，并不可靠。因为晶体的振荡频率远超人耳能够听见的频率上限，有时能够听到反而是有问题的，说明晶体质量不佳，更多的时候，正常工作的晶体是不会发出任何人耳能听到的声音的，有时声音来自外电路元件</p>
+</blockquote>
+<p>有源晶振的输出引脚接OSC_IN，OSC_OUT悬空</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>牧星
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://wanstarge.github.io/2024/05/09/%E6%99%B6%E6%8C%AF%E8%B5%B7%E6%8C%AF%E6%9D%A1%E4%BB%B6/" title="晶振起振条件">https://wanstarge.github.io/2024/05/09/晶振起振条件/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/PCB/" rel="tag"># PCB</a>
+          </div>
+
+        
+
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2024-05 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">牧星</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">1k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"wanstarge","repo":"wanstarge.github.io","client_id":"Ov23ligZFwkaCFV3R8nz","client_secret":"f924703a1d7cac6745c787694d77352daa99e224","admin_user":"wanstarge","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"67c7597ad3ec84b2a975cceb0b5b69b7"}</script>
+<script src="/js/third-party/comments/gitalk.js" defer></script>
+
+</body>
+</html>
