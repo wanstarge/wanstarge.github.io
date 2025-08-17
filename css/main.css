@@ -1182,6 +1182,43 @@ pre code {
 .use-motion .menu-item {
   visibility: hidden;
 }
+.github-corner :hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+.github-corner svg {
+  color: #fff;
+  fill: var(--theme-color);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 5;
+}
+@media (max-width: 991px) {
+  .github-corner {
+    display: none;
+  }
+  .github-corner svg {
+    color: var(--theme-color);
+    fill: #fff;
+  }
+  .github-corner .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+@keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  20%, 60% {
+    transform: rotate(-25deg);
+  }
+  40%, 80% {
+    transform: rotate(10deg);
+  }
+}
 @media (max-width: 991px) {
   .sidebar {
     left: -320px;
@@ -1221,7 +1258,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #f40ef4;
+    background: #ff45ff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -1525,9 +1562,6 @@ pre code {
 }
 .links-of-author a {
   font-size: 0.8125em;
-}
-.links-of-author i[class^='fa'] {
-  margin-right: 2px;
 }
 .cc-license .cc-opacity {
   border-bottom: 0;
@@ -2181,6 +2215,10 @@ pre code {
 .post-reward div span {
   display: block;
 }
+.post-reward div:hover span {
+  animation: next-roll 0.1s infinite linear;
+  pointer-events: none;
+}
 .post-reward img {
   display: inline-block;
   margin: 0.8em 2em 0;
@@ -2709,7 +2747,6 @@ header.header {
   }
   .links-of-author-item {
     margin: 5px 0 0;
-    width: 50%;
   }
   .links-of-author-item a {
     border-bottom: 0;
@@ -2837,12 +2874,18 @@ header.header {
   color: #0477ab;
   text-decoration: underline;
 }
-.fa-bilibili {
-  background: url("/images/bilibili.svg");
-  background-position: 50% 75%;
+.csdn {
+  background-image: url("/images/csdn.svg");
+  background-size: 1em 1em;
+  opacity: 0.55;
+  background-position: 0.05rem 0.2rem;
   background-repeat: no-repeat;
   height: 1rem;
   width: 1rem;
+  border-radius: 0rem;
+}
+.csdn:hover {
+  opacity: 1;
 }
 /* callout.css - 适用于 Hexo 的 Obsidian Callout 块样式 */
 .callout {
@@ -2892,32 +2935,32 @@ header.header {
 }
 /* 可选：为 callout-title 添加图标（可自定义 SVG 或字体图标） */
 .callout-note .callout-title::before {
-  content: "📝";
+  content: '📝';
   margin-right: 0.5em;
 }
 .callout-info .callout-title::before {
-  content: "ℹ️";
+  content: 'ℹ️';
   margin-right: 0.5em;
 }
 .callout-attention .callout-title::before,
 .callout-warning .callout-title::before {
-  content: "⚠️";
+  content: '⚠️';
   margin-right: 0.5em;
 }
 .callout-todo .callout-title::before {
-  content: "🔳";
+  content: '🔳';
   margin-right: 0.5em;
 }
 .callout-danger .callout-title::before {
-  content: "❗";
+  content: '❗';
   margin-right: 0.5em;
 }
 .callout-bug .callout-title::before {
-  content: "🐞";
+  content: '🐞';
   margin-right: 0.5em;
 }
 .callout-tip .callout-title::before,
 .callout-success .callout-title::before {
-  content: "✅";
+  content: '✅';
   margin-right: 0.5em;
 }

@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>镜像</title>
+    <url>/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/%E9%95%9C%E5%83%8F/</url>
+    <content><![CDATA[<p>由于系统刚安装的时候无法识别 ntfs 格式的 U
+盘，还是放到网络上会比较好找一点，同时也顺带整理了其他环境所需要的镜像</p>
+<h2 id="centos">CentOS</h2>
+<p>首先执行
+<code>&#123;sh&#125;sudo find /etc/yum.repos.d/ -name "*.bak" -exec mv &#123;&#125; &#123;&#125;.bak \;</code>
+来备份原有的安装源文件，而后针对对应的系统执行下方命令获取对应镜像源</p>
+<figure class="highlight sh"><figcaption><span>title:"centos8"</span></figcaption><table><tr><td class="code"><pre><span class="line">curl -o /etc/yum.repos.d/Centos-vault-8.5.2111.repo https://mirrors.aliyun.com/repo/Centos-vault-8.5.2111.repo</span><br><span class="line">curl -o /etc/yum.repos.d/epel-archive-8.repo https://mirrors.aliyun.com/repo/epel-archive-8.repo</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><figcaption><span>title:"centos7"</span></figcaption><table><tr><td class="code"><pre><span class="line">curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure>
+<p>再执行 <code>&#123;sh&#125;sudo yum clean all &amp;&amp; yum makecache</code>
+之后就可以下载自己需要的安装包了</p>
+<h2 id="ubuntu"><a href="/操作系统/Linux/Ubuntu/Ubuntu/">Ubuntu</a></h2>
+<p>在 Ubuntu 24.04 之前，Ubuntu 的软件源配置文件使用传统的
+One-Line-Style，路径为 <code>/etc/apt/sources.list</code>；从 Ubuntu
+24.04 开始，Ubuntu 的软件源配置文件变更为 DEB822 格式，路径为
+<code>/etc/apt/sources.list.d/ubuntu.sources</code>，各自对应命令如下：</p>
+<ol type="1">
+<li>传统模式 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 备份源文件 </span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line"><span class="comment"># 替换镜像链接</span></span><br><span class="line">sed -i <span class="string">&#x27;s|http://archive.ubuntu.com/ubuntu|http://mirrors.aliyun.com/ubuntu|g&#x27;</span> /etc/apt/sources.list</span><br></pre></td></tr></table></figure></li>
+<li>DEB822 格式 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 备份源文件 </span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/apt/sources.list.d/ubuntu.sources /etc/apt/sources.list.d/ubuntu.sources.bak</span><br><span class="line"><span class="comment"># 替换镜像链接</span></span><br><span class="line">sed -i <span class="string">&#x27;s|http://archive.ubuntu.com/ubuntu|http://mirrors.aliyun.com/ubuntu|g&#x27;</span> /etc/apt/sources.list.d/ubuntu.sources \</span><br><span class="line">    &amp;&amp; sed -i <span class="string">&#x27;s|http://security.ubuntu.com/ubuntu|http://mirrors.aliyun.com/ubuntu|g&#x27;</span> /etc/apt/sources.list.d/ubuntu.sources</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="npm">NPM</h2>
+<p>npm 是 nodejs
+的包管理软件，目前其最常用的国内镜像源是淘宝镜像源，更换方式如下：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 全局设置，[linux](/系统/Linux/Linux/)下好像是针对当前项目设置</span></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br><span class="line"><span class="comment"># 临时使用</span></span><br><span class="line">npm i [包名] --registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+<h2 id="rust">Rust</h2>
+<p>首先安装的时候需要指定镜像源，按照官方提供的
+<code>https://sh.rustup.rs</code>
+经常会出现无法正常安装或者时间过长的问题，这里使用中科大的镜像源，步骤如下：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置toolchain以及rustup安装镜像，可以在终端中临时设置，也可以放到bashrc中</span></span><br><span class="line"><span class="built_in">export</span> RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static</span><br><span class="line"><span class="built_in">export</span> RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup</span><br><span class="line"><span class="comment"># 指定cargo安装目录</span></span><br><span class="line"><span class="built_in">export</span> CARGO_HOME=/opt/cargo</span><br><span class="line"><span class="comment"># 下载安装脚本</span></span><br><span class="line">wget https://mirrors.ustc.edu.cn/misc/rustup-install.sh</span><br><span class="line"><span class="comment"># 执行安装</span></span><br><span class="line">bash rustup-install.sh</span><br></pre></td></tr></table></figure>
+<h2 id="python"><a href="/编程语言/Python/Python/">Python</a></h2>
+<p>配置 pip 以及 conda
+镜像，安装包的通过网上应该很容易找到，不行就微软商店（我比较抵触），linux
+下使用对应的 <a href="/操作系统/Linux/基础服务/包管理/">包管理</a>
+软件安装即可，配置镜像步骤如下：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置pip镜像</span></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"><span class="comment"># 配置conda镜像</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda </span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/# </span><br><span class="line"><span class="comment"># conda添加pytorch镜像</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/# <span class="keyword">for</span> legacy win-64</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/peterjc123/conda</span><br></pre></td></tr></table></figure>
+<h2 id="maven">Maven</h2>
+<p>默认情况下，mvn 在当前用户名目录下的.m2
+文件夹中建立仓库，我们可以修改 maven 安装目录下 conf 文件夹里的
+settings.xml 文件，修改 <code>$&#123;user.home&#125;/.m2/repository</code>
+为自己想要存储的位置即可</p>
+<p>默认的官方库存在于 pom-4.0.0.xml 内，可通过便捷使用 winrar
+的查找定位来进行找到，里面配置了中央仓库的地址（国外镜像），在
+settings.xml 中配置镜像如下：也可以在上述创建的 repository
+文件夹下新建一个 settings.xml 以覆盖全局配置</p>
+<figure class="highlight xml"><figcaption><span>fold title:"局部配置"</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">id</span>&gt;</span>aliyunmaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central,jcenter<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span> <span class="comment">&lt;!--配置只代理中央仓库--&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://maven.aliyun.com/repository/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>通用</category>
+      </categories>
+  </entry>
+  <entry>
     <title>晶振</title>
     <url>/PCB/%E6%99%B6%E6%8C%AF/</url>
     <content><![CDATA[<h2 id="总结">总结</h2>
@@ -214,57 +266,5 @@ href="https://blog.captainz.cc/posts/scoop_winodws_cmd1.html">https://blog.capta
 <code>./ntttcp -r -m 64,*,192.168.2.2 -t 10</code></p>
 </blockquote>
 ]]></content>
-  </entry>
-  <entry>
-    <title>镜像</title>
-    <url>/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/%E9%95%9C%E5%83%8F/</url>
-    <content><![CDATA[<p>由于系统刚安装的时候无法识别 ntfs 格式的 U
-盘，还是放到网络上会比较好找一点，同时也顺带整理了其他环境所需要的镜像</p>
-<h2 id="centos">CentOS</h2>
-<p>首先执行
-<code>&#123;sh&#125;sudo find /etc/yum.repos.d/ -name "*.bak" -exec mv &#123;&#125; &#123;&#125;.bak \;</code>
-来备份原有的安装源文件，而后针对对应的系统执行下方命令获取对应镜像源</p>
-<figure class="highlight sh"><figcaption><span>title:"centos8"</span></figcaption><table><tr><td class="code"><pre><span class="line">curl -o /etc/yum.repos.d/Centos-vault-8.5.2111.repo https://mirrors.aliyun.com/repo/Centos-vault-8.5.2111.repo</span><br><span class="line">curl -o /etc/yum.repos.d/epel-archive-8.repo https://mirrors.aliyun.com/repo/epel-archive-8.repo</span><br></pre></td></tr></table></figure>
-<figure class="highlight sh"><figcaption><span>title:"centos7"</span></figcaption><table><tr><td class="code"><pre><span class="line">curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure>
-<p>再执行 <code>&#123;sh&#125;sudo yum clean all &amp;&amp; yum makecache</code>
-之后就可以下载自己需要的安装包了</p>
-<h2 id="ubuntu"><a href="/操作系统/Linux/Ubuntu/Ubuntu/">Ubuntu</a></h2>
-<p>在 Ubuntu 24.04 之前，Ubuntu 的软件源配置文件使用传统的
-One-Line-Style，路径为 <code>/etc/apt/sources.list</code>；从 Ubuntu
-24.04 开始，Ubuntu 的软件源配置文件变更为 DEB822 格式，路径为
-<code>/etc/apt/sources.list.d/ubuntu.sources</code>，各自对应命令如下：</p>
-<ol type="1">
-<li>传统模式 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 备份源文件 </span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line"><span class="comment"># 替换镜像链接</span></span><br><span class="line">sed -i <span class="string">&#x27;s|http://archive.ubuntu.com/ubuntu|http://mirrors.aliyun.com/ubuntu|g&#x27;</span> /etc/apt/sources.list</span><br></pre></td></tr></table></figure></li>
-<li>DEB822 格式 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 备份源文件 </span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/apt/sources.list.d/ubuntu.sources /etc/apt/sources.list.d/ubuntu.sources.bak</span><br><span class="line"><span class="comment"># 替换镜像链接</span></span><br><span class="line">sed -i <span class="string">&#x27;s|http://archive.ubuntu.com/ubuntu|http://mirrors.aliyun.com/ubuntu|g&#x27;</span> /etc/apt/sources.list.d/ubuntu.sources \</span><br><span class="line">    &amp;&amp; sed -i <span class="string">&#x27;s|http://security.ubuntu.com/ubuntu|http://mirrors.aliyun.com/ubuntu|g&#x27;</span> /etc/apt/sources.list.d/ubuntu.sources</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="npm">NPM</h2>
-<p>npm 是 nodejs
-的包管理软件，目前其最常用的国内镜像源是淘宝镜像源，更换方式如下：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 全局设置，[linux](/系统/Linux/Linux/)下好像是针对当前项目设置</span></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br><span class="line"><span class="comment"># 临时使用</span></span><br><span class="line">npm i [包名] --registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
-<h2 id="rust">Rust</h2>
-<p>首先安装的时候需要指定镜像源，按照官方提供的
-<code>https://sh.rustup.rs</code>
-经常会出现无法正常安装或者时间过长的问题，这里使用中科大的镜像源，步骤如下：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置toolchain以及rustup安装镜像，可以在终端中临时设置，也可以放到bashrc中</span></span><br><span class="line"><span class="built_in">export</span> RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static</span><br><span class="line"><span class="built_in">export</span> RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup</span><br><span class="line"><span class="comment"># 指定cargo安装目录</span></span><br><span class="line"><span class="built_in">export</span> CARGO_HOME=/opt/cargo</span><br><span class="line"><span class="comment"># 下载安装脚本</span></span><br><span class="line">wget https://mirrors.ustc.edu.cn/misc/rustup-install.sh</span><br><span class="line"><span class="comment"># 执行安装</span></span><br><span class="line">bash rustup-install.sh</span><br></pre></td></tr></table></figure>
-<h2 id="python"><a href="/编程语言/Python/Python/">Python</a></h2>
-<p>配置 pip 以及 conda
-镜像，安装包的通过网上应该很容易找到，不行就微软商店（我比较抵触），linux
-下使用对应的 <a href="/操作系统/Linux/基础服务/包管理/">包管理</a>
-软件安装即可，配置镜像步骤如下：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置pip镜像</span></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"><span class="comment"># 配置conda镜像</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda </span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/# </span><br><span class="line"><span class="comment"># conda添加pytorch镜像</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/# <span class="keyword">for</span> legacy win-64</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/peterjc123/conda</span><br></pre></td></tr></table></figure>
-<h2 id="maven">Maven</h2>
-<p>默认情况下，mvn 在当前用户名目录下的.m2
-文件夹中建立仓库，我们可以修改 maven 安装目录下 conf 文件夹里的
-settings.xml 文件，修改 <code>$&#123;user.home&#125;/.m2/repository</code>
-为自己想要存储的位置即可</p>
-<p>默认的官方库存在于 pom-4.0.0.xml 内，可通过便捷使用 winrar
-的查找定位来进行找到，里面配置了中央仓库的地址（国外镜像），在
-settings.xml 中配置镜像如下：也可以在上述创建的 repository
-文件夹下新建一个 settings.xml 以覆盖全局配置</p>
-<figure class="highlight xml"><figcaption><span>fold title:"局部配置"</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">id</span>&gt;</span>aliyunmaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central,jcenter<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span> <span class="comment">&lt;!--配置只代理中央仓库--&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://maven.aliyun.com/repository/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>通用</category>
-      </categories>
   </entry>
 </search>
