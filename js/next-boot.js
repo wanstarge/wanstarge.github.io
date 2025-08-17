@@ -27,7 +27,7 @@ NexT.boot.registerEvents = function() {
     const tHash = location.hash;
     if (tHash !== '' && !tHash.match(/%\S{2}/)) {
       const target = document.querySelector(`.tabs ul.nav-tabs li a[href="${tHash}"]`);
-      target && target.click();
+      target?.click();
     }
   });
 
@@ -47,7 +47,7 @@ NexT.boot.refresh = function() {
     background: 'var(--content-bg-color)'
   });
   CONFIG.lazyload && window.lozad('.post-body img').observe();
-  CONFIG.pangu && window.pangu.spacingPage();
+  CONFIG.pangu && window.pangu.spacingElementByTagName('main');
 
   CONFIG.exturl && NexT.utils.registerExtURL();
   NexT.utils.wrapTableWithBox();

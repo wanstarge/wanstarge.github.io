@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/star_32x32.png">
@@ -14,12 +14,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"wanstarge.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wanstarge.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.24.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="由于系统刚安装的时候无法识别 ntfs 格式的 U 盘，还是放到网络上会比较好找一点，同时也顺带整理了其他环境所需要的镜像 CentOS 首先执行 &#123;sh&#125;sudo find &#x2F;etc&#x2F;yum.repos.d&#x2F; -name &quot;*.bak&quot; -exec mv &#123;&#125; &#123;&#125;.bak \; 来备份原有的安装源文件，而后针对对应的系统执行">
 <meta property="og:type" content="blog">
@@ -29,13 +29,12 @@
 <meta property="og:description" content="由于系统刚安装的时候无法识别 ntfs 格式的 U 盘，还是放到网络上会比较好找一点，同时也顺带整理了其他环境所需要的镜像 CentOS 首先执行 &#123;sh&#125;sudo find &#x2F;etc&#x2F;yum.repos.d&#x2F; -name &quot;*.bak&quot; -exec mv &#123;&#125; &#123;&#125;.bak \; 来备份原有的安装源文件，而后针对对应的系统执行">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-17T09:27:56.398Z">
-<meta property="article:modified_time" content="2025-08-17T09:48:46.345Z">
+<meta property="article:modified_time" content="2025-08-17T10:45:38.881Z">
 <meta property="article:author" content="牧星">
 <meta name="twitter:card" content="summary">
 
 
 <link rel="canonical" href="https://wanstarge.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/%E9%95%9C%E5%83%8F/">
-
 
 
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wanstarge.github.io/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/%E9%95%9C%E5%83%8F/","path":"操作系统/通用功能/镜像/","title":"镜像"}</script>
@@ -48,6 +47,30 @@
 
 
 
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -218,7 +241,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-08-17 17:27:56 / 修改时间：17:48:46" itemprop="dateCreated datePublished" datetime="2025-08-17T17:27:56+08:00">2025-08-17</time>
+      <time title="创建时间：2025-08-17 17:27:56 / 修改时间：18:45:38" itemprop="dateCreated datePublished" datetime="2025-08-17T17:27:56+08:00">2025-08-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -237,7 +260,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>838</span>
+      <span>3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -270,8 +293,8 @@ One-Line-Style，路径为 <code>/etc/apt/sources.list</code>；从 Ubuntu
 24.04 开始，Ubuntu 的软件源配置文件变更为 DEB822 格式，路径为
 <code>/etc/apt/sources.list.d/ubuntu.sources</code>，各自对应命令如下：</p>
 <ol type="1">
-<li>传统模式 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 备份源文件 </span></span><br><span class="line">sudo <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line"><span class="comment"># 替换镜像链接</span></span><br><span class="line">sed -i <span class="string">&#x27;s|http://archive.ubuntu.com/ubuntu|http://mirrors.aliyun.com/ubuntu|g&#x27;</span> /etc/apt/sources.list</span><br></pre></td></tr></table></figure></li>
-<li>DEB822 格式 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 备份源文件 </span></span><br><span class="line">sudo <span class="built_in">cp</span> /etc/apt/sources.list.d/ubuntu.sources /etc/apt/sources.list.d/ubuntu.sources.bak</span><br><span class="line"><span class="comment"># 替换镜像链接</span></span><br><span class="line">sed -i <span class="string">&#x27;s|http://archive.ubuntu.com/ubuntu|http://mirrors.aliyun.com/ubuntu|g&#x27;</span> /etc/apt/sources.list.d/ubuntu.sources \</span><br><span class="line">    &amp;&amp; sed -i <span class="string">&#x27;s|http://security.ubuntu.com/ubuntu|http://mirrors.aliyun.com/ubuntu|g&#x27;</span> /etc/apt/sources.list.d/ubuntu.sources</span><br></pre></td></tr></table></figure></li>
+<li>传统模式 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 备份源文件 </span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line"><span class="comment"># 替换镜像链接</span></span><br><span class="line">sed -i <span class="string">&#x27;s|http://archive.ubuntu.com/ubuntu|http://mirrors.aliyun.com/ubuntu|g&#x27;</span> /etc/apt/sources.list</span><br></pre></td></tr></table></figure></li>
+<li>DEB822 格式 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 备份源文件 </span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/apt/sources.list.d/ubuntu.sources /etc/apt/sources.list.d/ubuntu.sources.bak</span><br><span class="line"><span class="comment"># 替换镜像链接</span></span><br><span class="line">sed -i <span class="string">&#x27;s|http://archive.ubuntu.com/ubuntu|http://mirrors.aliyun.com/ubuntu|g&#x27;</span> /etc/apt/sources.list.d/ubuntu.sources \</span><br><span class="line">    &amp;&amp; sed -i <span class="string">&#x27;s|http://security.ubuntu.com/ubuntu|http://mirrors.aliyun.com/ubuntu|g&#x27;</span> /etc/apt/sources.list.d/ubuntu.sources</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="npm">NPM</h2>
 <p>npm 是 nodejs
@@ -287,7 +310,7 @@ One-Line-Style，路径为 <code>/etc/apt/sources.list</code>；从 Ubuntu
 镜像，安装包的通过网上应该很容易找到，不行就微软商店（我比较抵触），linux
 下使用对应的 <a href="/操作系统/Linux/基础服务/包管理/">包管理</a>
 软件安装即可，配置镜像步骤如下：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置pip镜像</span></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"><span class="comment"># 配置conda镜像</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda </span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/<span class="comment"># </span></span><br><span class="line"><span class="comment"># conda添加pytorch镜像</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/<span class="comment"># for legacy win-64</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/peterjc123/conda</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置pip镜像</span></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"><span class="comment"># 配置conda镜像</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda </span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/# </span><br><span class="line"><span class="comment"># conda添加pytorch镜像</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/# <span class="keyword">for</span> legacy win-64</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/peterjc123/conda</span><br></pre></td></tr></table></figure>
 <h2 id="maven">Maven</h2>
 <p>默认情况下，mvn 在当前用户名目录下的.m2
 文件夹中建立仓库，我们可以修改 maven 安装目录下 conf 文件夹里的
@@ -347,6 +370,12 @@ settings.xml 中配置镜像如下：也可以在上述创建的 repository
 
 
 
+    
+  
+  <div class="comments giscus-container">
+  </div>
+  
+  
 </div>
   </main>
 
@@ -366,13 +395,13 @@ settings.xml 中配置镜像如下：也可以在上述创建的 repository
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">3k</span>
+    <span title="站点总字数">8k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">13 分钟</span>
+    <span title="站点阅读时长">7 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -397,31 +426,34 @@ settings.xml 中配置镜像如下：也可以在上述创建的 repository
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
+<script class="next-config" data-name="giscus" type="application/json">{"enable":true,"repo":"wanstarge/wanstarge.github.io","repo_id":"R_kgDOL4bc9Q","category":"General","category_id":"DIC_kwDOL4bc9c4Co6cd","mapping":"pathname","strict":0,"reactions_enabled":1,"emit_metadata":0,"theme":"light","lang":"zh-CN","crossorigin":"anonymous","input_position":"bottom","loading":"lazy"}</script>
 
+<script>
+document.addEventListener('page:loaded', () => {
+  if (!CONFIG.page.comments) return;
 
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
-
-  
-
-
-
-
-  <script src="/js/third-party/pace.js"></script>
-
-
-  
-
-
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
-
-
+  NexT.utils.loadComments('.giscus-container')
+    .then(() => NexT.utils.getScript('https://giscus.app/client.js', {
+      attributes: {
+        async                   : true,
+        crossOrigin             : 'anonymous',
+        'data-repo'             : CONFIG.giscus.repo,
+        'data-repo-id'          : CONFIG.giscus.repo_id,
+        'data-category'         : CONFIG.giscus.category,
+        'data-category-id'      : CONFIG.giscus.category_id,
+        'data-mapping'          : CONFIG.giscus.mapping,
+        'data-strict'           : CONFIG.giscus.strict,
+        'data-reactions-enabled': CONFIG.giscus.reactions_enabled,
+        'data-emit-metadata'    : CONFIG.giscus.emit_metadata,
+        'data-theme'            : CONFIG.giscus.theme,
+        'data-lang'             : CONFIG.giscus.lang,
+        'data-input-position'   : CONFIG.giscus.input_position,
+        'data-loading'          : CONFIG.giscus.loading
+      },
+      parentNode: document.querySelector('.giscus-container')
+    }));
+});
+</script>
 
 </body>
 </html>
