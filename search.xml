@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>晶振</title>
+    <url>/PCB/%E6%99%B6%E6%8C%AF/</url>
+    <content><![CDATA[<h2 id="总结">总结</h2>
+<figure>
+<img src="/images/PCB/OSC2.jpg" alt="OSC2.jpg" />
+<figcaption aria-hidden="true">OSC2.jpg</figcaption>
+</figure>
+<div class="callout callout-note">
+<div class="callout-content">
+<p>补充：并联电阻不能太小，串联电阻不能太大。否则，在温度较低的情况下不易起振,
+1MΩ电阻适用于以下问题： 1. 当发生程序启动慢或不运行时，建议给晶振并联
+1MΩ的电阻 2.
+在低温环境下振荡电路阻抗也会发生变化，当阻抗增加到一定程度时，晶振就会发生起振困难或不起振现象。这时，我们也需要给晶振并联
+1MΩ电阻</p>
+</div>
+</div>
+<h2 id="晶振参数以及匹配电容的计算">晶振参数以及匹配电容的计算</h2>
+<p>负载电容</p>
+<p><span
+class="math display">\[C_{L}\cong\frac{C_{G}*C_{D}}{C_{G}+C_{D}}+C_{S}\]</span></p>
+<figure>
+<img src="/images/PCB/OSC1.jpg" alt="OSC1.jpg" />
+<figcaption aria-hidden="true">OSC1.jpg</figcaption>
+</figure>
+<p>即负载电容跟晶体振荡电路输入管脚到 GND 的总电容 CG
+、晶体振荡电路输出管脚到 GND 的总电容 CD 以及晶体本身的并联电容 CS
+有关。</p>
+<p>我们知道晶体振荡电路输入管脚到 GND 的总电容一般由以下几部分组成：</p>
+<p>1.需要外加晶振的单片机或其他 IC 管脚到 GND 之间的寄生电容 Ci；</p>
+<p>2.振荡输入端 OSC_IN 的 PCB 走线到 GND 之间的寄生电容 Cpcb1；</p>
+<p>3.电路上额外需要增加的并联到 GND 的外匹配电容 CL1</p>
+<p><span class="math display">\[C_{G}=C_{i}+C_{PCB1}+C_{L1}\]</span></p>
+<p>同样的，晶体振荡电路输出管脚到 GND 的总电容一般由以下几部分组成：</p>
+<p>1.需要外加晶振的单片机或者其他 IC 管脚到 GND 之间的寄生电容 Co</p>
+<p>2.振荡输出端 OSC_OUT 的 PCB 走线到 GND 之间的寄生电容 Cpcb2</p>
+<p>3.电路上额外需要增加的并联到 GND 的外匹配电容 CL2</p>
+<p><span class="math display">\[C_{G}=C_{O}+C_{PCB2}+C_{L2}\]</span></p>
+<p>如上所述，我们应该通过需要外接晶振的单片机或者其他 IC
+的资料确认寄生电容 Ci 和 Co</p>
+<p> 例如：<img src="/images/PCB/OSC3.jpg" alt="OSC3.jpg" /></p>
+<p>我们知道，在平时的电路设计中会要求晶体尽可能的靠近振荡电路，即走线尽量短并且对称，所以和
+的值应该很小，这里按照经验一般取 0.2pF。</p>
+<p>为了保持晶体的负载平衡，即晶振电路输入输出的电容需保持一致，所以在实际应用中，往往取</p>
+<p>CG=CD,故代入公式有</p>
+<p>12.5pf-1.3pf=CG/2=CD/2=11.2pF,即 CD=CG=22.4pF</p>
+<p>故 CL1=CL2=22.4pF-Ci-Cpcb1=22.4pF-0.2pF-0.6pF=21.6pF</p>
+<p>故选取 22pF 作为匹配值</p>
+<h2 id="晶振起振的详解">晶振起振的详解</h2>
+<p>巴克豪森准则：</p>
+<p>电子振荡器系统信号由输入到输出再反馈到输入的相差为
+360°，且环路增益≥1，为振荡器起振的必要条件</p>
+<p>一个简单振荡器想产生周期性的振荡，通常是以电压形式的输出，在持续不断地输出的同时，需要加入放大器以产生持续的反馈给到输入，由于放大器本身的输出在高频时相移太大会使整个反馈变成正的，从而产生振荡</p>
+<figure>
+<img src="/images/PCB/OSC4.jpg" alt="C" />
+<figcaption aria-hidden="true">C</figcaption>
+</figure>
+<p>一个简单振荡器想产生周期性的振荡，通常是以电压形式的输出，在持续不断地输出的同时，需要加入放大器以产生持续的反馈给到输入，由于放大器本身的输出在高频时相移太大会使整个反馈变成正的，从而产生振荡</p>
+<figure>
+<img src="/images/PCB/OSC5.jpg" alt="OSC5.jpg" />
+<figcaption aria-hidden="true">OSC5.jpg</figcaption>
+</figure>
+<h2 id="晶振的观测-osc5.jpg">晶振的观测 <img src="/images/PCB/OSC5.jpg"
+alt="OSC5.jpg" /></h2>
+<h3 id="示波器">示波器</h3>
+<p>用示波器看波形是最直接的方法。因晶振波形的占空比为
+50%，所以测得的平均电压为 1/2Vcc
+左右，晶振波形一般是正弦波或者方波，当输出波形是方波时，一般上升沿比较陡峭，且包含了较多的高频信号，这个时候就要保证测试的带宽足够，理论值是带宽是被测信号频率的
+2 倍，实际测试方波时带宽应该是被测信号频率的 10 倍。</p>
+<p>除了带宽之外，在测试晶振时，还有一点应该重点注意：<strong>晶振对电容负载较敏感，探头电容相对较大，相当于一个很重的负载并联在晶振电路中</strong>，容易导致电路停振而得不出正确的测量结果。所以在进行晶振测试的时候，<strong>需要保证足够的带宽和较小的输入电容</strong></p>
+<h3 id="万用表">万用表</h3>
+<p>无源晶振具备两个管脚：频率输入脚与频率输出脚。若晶振已经起振，说明这两个管脚之间必然存在电压差，这样才会有流经的电流对晶片产生激励功率。所以，我们可以用万用表的直流电压档，测量晶振两个引脚的电压。起振的时候，晶振两端的电压一般为芯片供电电压
+Vcc 的一半。</p>
+<p>但这里要注意，若芯片不良，则无法捕捉到晶振正在提供给它的正确的时钟信号。在这种情况之下，我们容易对晶振是否起振做出误判</p>
+<h3 id="频率计">频率计</h3>
+<p>使用频率计测量晶振频率输出脚位时，若有正常的波形（常见为方波，温补晶振有削峰正弦波输出）或正常频率信号输出，则可视为该晶振已经正常起振。</p>
+<blockquote>
+<p>最后，听声音判断晶振是否起振的方法，并不可靠。因为晶体的振荡频率远超人耳能够听见的频率上限，有时能够听到反而是有问题的，说明晶体质量不佳，更多的时候，正常工作的晶体是不会发出任何人耳能听到的声音的，有时声音来自外电路元件</p>
+</blockquote>
+<p>有源晶振的输出引脚接 OSC_IN，OSC_OUT 悬空</p>
+]]></content>
+      <categories>
+        <category>PCB</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>镜像</title>
+    <url>/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD/%E9%95%9C%E5%83%8F/</url>
+    <content><![CDATA[<p>由于系统刚安装的时候无法识别 ntfs 格式的 U
+盘，还是放到网络上会比较好找一点，同时也顺带整理了其他环境所需要的镜像</p>
+<h2 id="centos">CentOS</h2>
+<p>首先执行
+<code>&#123;sh&#125;sudo find /etc/yum.repos.d/ -name "*.bak" -exec mv &#123;&#125; &#123;&#125;.bak \;</code>
+来备份原有的安装源文件，而后针对对应的系统执行下方命令获取对应镜像源</p>
+<figure class="highlight sh"><figcaption><span>title:"centos8"</span></figcaption><table><tr><td class="code"><pre><span class="line">curl -o /etc/yum.repos.d/Centos-vault-8.5.2111.repo https://mirrors.aliyun.com/repo/Centos-vault-8.5.2111.repo</span><br><span class="line">curl -o /etc/yum.repos.d/epel-archive-8.repo https://mirrors.aliyun.com/repo/epel-archive-8.repo</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><figcaption><span>title:"centos7"</span></figcaption><table><tr><td class="code"><pre><span class="line">curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure>
+<p>再执行 <code>&#123;sh&#125;sudo yum clean all &amp;&amp; yum makecache</code>
+之后就可以下载自己需要的安装包了</p>
+<h2 id="ubuntu"><a href="/操作系统/Linux/Ubuntu/Ubuntu/">Ubuntu</a></h2>
+<p>在 Ubuntu 24.04 之前，Ubuntu 的软件源配置文件使用传统的
+One-Line-Style，路径为 <code>/etc/apt/sources.list</code>；从 Ubuntu
+24.04 开始，Ubuntu 的软件源配置文件变更为 DEB822 格式，路径为
+<code>/etc/apt/sources.list.d/ubuntu.sources</code>，各自对应命令如下：</p>
+<ol type="1">
+<li>传统模式 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 备份源文件 </span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line"><span class="comment"># 替换镜像链接</span></span><br><span class="line">sed -i <span class="string">&#x27;s|http://archive.ubuntu.com/ubuntu|http://mirrors.aliyun.com/ubuntu|g&#x27;</span> /etc/apt/sources.list</span><br></pre></td></tr></table></figure></li>
+<li>DEB822 格式 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 备份源文件 </span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/apt/sources.list.d/ubuntu.sources /etc/apt/sources.list.d/ubuntu.sources.bak</span><br><span class="line"><span class="comment"># 替换镜像链接</span></span><br><span class="line">sed -i <span class="string">&#x27;s|http://archive.ubuntu.com/ubuntu|http://mirrors.aliyun.com/ubuntu|g&#x27;</span> /etc/apt/sources.list.d/ubuntu.sources \</span><br><span class="line">    &amp;&amp; sed -i <span class="string">&#x27;s|http://security.ubuntu.com/ubuntu|http://mirrors.aliyun.com/ubuntu|g&#x27;</span> /etc/apt/sources.list.d/ubuntu.sources</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="npm">NPM</h2>
+<p>npm 是 nodejs
+的包管理软件，目前其最常用的国内镜像源是淘宝镜像源，更换方式如下：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 全局设置，[linux](/系统/Linux/Linux/)下好像是针对当前项目设置</span></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br><span class="line"><span class="comment"># 临时使用</span></span><br><span class="line">npm i [包名] --registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+<h2 id="rust">Rust</h2>
+<p>首先安装的时候需要指定镜像源，按照官方提供的
+<code>https://sh.rustup.rs</code>
+经常会出现无法正常安装或者时间过长的问题，这里使用中科大的镜像源，步骤如下：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置toolchain以及rustup安装镜像，可以在终端中临时设置，也可以放到bashrc中</span></span><br><span class="line"><span class="built_in">export</span> RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static</span><br><span class="line"><span class="built_in">export</span> RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup</span><br><span class="line"><span class="comment"># 指定cargo安装目录</span></span><br><span class="line"><span class="built_in">export</span> CARGO_HOME=/opt/cargo</span><br><span class="line"><span class="comment"># 下载安装脚本</span></span><br><span class="line">wget https://mirrors.ustc.edu.cn/misc/rustup-install.sh</span><br><span class="line"><span class="comment"># 执行安装</span></span><br><span class="line">bash rustup-install.sh</span><br></pre></td></tr></table></figure>
+<h2 id="python"><a href="/编程语言/Python/Python/">Python</a></h2>
+<p>配置 pip 以及 conda
+镜像，安装包的通过网上应该很容易找到，不行就微软商店（我比较抵触），linux
+下使用对应的 <a href="/操作系统/Linux/基础服务/包管理/">包管理</a>
+软件安装即可，配置镜像步骤如下：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置pip镜像</span></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"><span class="comment"># 配置conda镜像</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda </span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/# </span><br><span class="line"><span class="comment"># conda添加pytorch镜像</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/# <span class="keyword">for</span> legacy win-64</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/peterjc123/conda</span><br></pre></td></tr></table></figure>
+<h2 id="maven">Maven</h2>
+<p>默认情况下，mvn 在当前用户名目录下的.m2
+文件夹中建立仓库，我们可以修改 maven 安装目录下 conf 文件夹里的
+settings.xml 文件，修改 <code>$&#123;user.home&#125;/.m2/repository</code>
+为自己想要存储的位置即可</p>
+<p>默认的官方库存在于 pom-4.0.0.xml 内，可通过便捷使用 winrar
+的查找定位来进行找到，里面配置了中央仓库的地址（国外镜像），在
+settings.xml 中配置镜像如下：也可以在上述创建的 repository
+文件夹下新建一个 settings.xml 以覆盖全局配置</p>
+<figure class="highlight xml"><figcaption><span>fold title:"局部配置"</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">id</span>&gt;</span>aliyunmaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central,jcenter<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span> <span class="comment">&lt;!--配置只代理中央仓库--&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://maven.aliyun.com/repository/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>通用</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>包管理</title>
+    <url>/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/%E6%9C%8D%E5%8A%A1/%E5%8C%85%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<h2 id="安装路径">安装路径</h2>
+<p>windows 默认的应用安装路径是由环境变量路径
+<code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion</code>
+下的 ProgramFilesDir
+这一变量来决定的，修改其值既可以修改程序的默认安装路径。</p>
+<div class="callout callout-attention">
+<div class="callout-title">
+后经测试不建议修改，统一软件安装规范为直接修改安装路径
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>修改盘符 C 为目的安装的磁盘</li>
+<li>并将其原有路径中的空格进行删除</li>
+<li>例如 <code>C:\Program Files\...</code> 改为
+<code>D:\ProgramFiles\...</code></li>
+</ol>
+</div>
+</div>
+<h2 id="choco">choco</h2>
+<p>默认安装位置通过以下几个环境变量进行指定，具体参考 <a
+href="https://docs.chocolatey.org/en-us/getting-started">Getting
+Started</a>,可安装的包参考 <a
+href="https://community.chocolatey.org/packages">Packages</a>，会有具体教程</p>
+<ol type="1">
+<li>一些包会默认装在 <code>ChocolateyInstall\lib</code> 目录下；</li>
+<li>其它一些基于 windows 下的安装包比如 MSI 会被安装在 C 盘下的
+<code>Program Files</code> 文件夹里；</li>
+<li>还有一些数据包会被装在 <code>$env:ChocolateyBinRoot</code>
+目录下，如果这个环境变量不存在，包将会被创建在 <code>c:\tools</code>
+目录下。</li>
+</ol>
+<div class="callout callout-note">
+<div class="callout-title">
+修改方法
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>对于第一种和第三种情况，我们进行设置对应的环境变量即可，即
+<code>ChocolateyInstall</code> 和 <code>ChocolateyBinRoot</code></li>
+<li>而对于第二种情况，我们需要通过指令传递安装路径的，比如
+<code>choco install llvm -ia "'/D=D:\software\llvm'"</code></li>
+<li>由于 choco
+的一些需要的功能需要收费，且总体体验不能够高度的自主可控，转用
+Scoop</li>
+</ol>
+</div>
+</div>
+<h2 id="winget">winget</h2>
+<p>winget 是微软推出的一款旨在实现 windows
+下的包管理的工具，但是其目前的包数量仍较少，且对代理的支持效果较差，国内用户体验感较差，一些基础的使用尝试如下：</p>
+<ul>
+<li>winget settings 打开配置文件 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;$schema&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://aka.ms/winget-settings.schema.json&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;visual&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;progressBar&quot;</span><span class="punctuation">:</span> <span class="string">&quot;rainbow&quot;</span></span><br><span class="line">        <span class="comment">// 三种样式可选: accent(默认值), retro, rainbow</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;logging&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;level&quot;</span><span class="punctuation">:</span> <span class="string">&quot;verbose&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span> <span class="comment">// “verbose”, “info”, “warning”, “error”, “critical”</span></span><br><span class="line">    <span class="attr">&quot;experimentalFeatures&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;experimentalMSStore&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// For documentation on these settings, see: https://aka.ms/winget-settings</span></span><br><span class="line">    <span class="comment">// &quot;source&quot;: &#123;</span></span><br><span class="line">    <span class="comment">//    &quot;autoUpdateIntervalInMinutes&quot;: 5</span></span><br><span class="line">    <span class="comment">// &#125;,</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="scoop">scoop</h2>
+<h3 id="准备">准备</h3>
+<p>在 powershell 中配置 scoop 代理的方式为
+<code>$env:scoop_proxy = "http://127.0.0.1:7890"</code>（替换为自己的端口），清除
+scoop 代理的方式为 <code>$env:scoop_proxy= ""</code></p>
+<h3 id="安装">安装</h3>
+<ol type="1">
+<li><strong>下载安装脚本</strong>：
+<code>irm get.scoop.sh -outfile 'install.ps1'</code> 或者
+<code>curl -k -x 127.0.0.1:7890 https://raw.githubusercontent.com/scoopinstaller/install/master/install.ps1 -o install.ps1</code>（国内用户
+raw.githubusercontent.com 该域名可能被污染无法访问到真实的 ip
+地址，可以通过 <a href="https://ipaddress.com">ipaddress.com</a>
+查找对应的 ip 并修改 hosts 文件即可）</li>
+<li><strong>允许脚本执行权限</strong>：管理员身份打开 powershell 输入
+<code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser</code></li>
+<li><strong>执行所下载的脚本进行安装</strong>：
+<code>.\install.ps1 -RunAsAdmin -ScoopDir 'D:\Scoop' -ScoopGlobalDir 'D:\ProgramFiles' -NoProxy</code>
+或者
+<code>.\install.ps1 -RunAsAdmin -ScoopDir 'D:\Scoop' -ScoopGlobalDir 'D:\Scoop' -Proxy '127.0.0.1:7890'</code></li>
+<li>执行 <code>scoop checkup</code> <strong>检查</strong> scoop
+安装是否正常
+<div class="callout callout-attention">
+<div class="callout-title">
+如果当前用户不是管理员的话，需去掉 <code>-RunAsAdmin</code> 选项
+</div>
+</div></li>
+</ol>
+<h3 id="基础使用">基础使用</h3>
+<ol type="1">
+<li><code>scoop bucket add main</code>:
+先添加基础的软件源仓库，这里仅展示 main 仓库的添加 extras,versions
+类似</li>
+<li><code>scoop search [pkg]</code>:
+终端搜索想要安装的软件包，如果没有可以上 <a
+href="https://scoop.sh/#/">Scoop</a> 去搜索，按照指示步骤添加对应的
+bucket 即可</li>
+<li><code>scoop install [pkg]</code>:
+安装对应的软件包，有时候需要参照上方进行代理设置</li>
+<li><code>scoop remove [pkg]</code>: 卸载对应软件包</li>
+<li><code>scoop status</code>: 查找软件包更新 <img
+src="/images/System/Windows/scoop_status.png"
+alt="scoop_status.png" /></li>
+<li><code>scoop update</code>: 更新 scoop 以及软件源</li>
+<li><code>scoop update [pkg]</code>: 更新对应软件包</li>
+<li><code>scoop cache rm *</code>: 清除缓存</li>
+<li><code>scoop cleanup *</code>: 清理过时软件版本</li>
+<li><code>scoop bucket list</code>: 列出当前使用的软件源/存储桶 <img
+src="/images/System/Windows/scoop_bucket.png"
+alt="scoop_bucket.png" /></li>
+<li>导出软件源/存储桶 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$SCOOP_DIR</span> = <span class="string">&#x27;D:\software\scoop&#x27;</span></span><br><span class="line"><span class="variable">$buckets</span> = (scoop bucket list)</span><br><span class="line"><span class="variable">$knownBuckets</span> = (scoop bucket known)</span><br><span class="line"><span class="built_in">Push-Location</span></span><br><span class="line"><span class="variable">$output</span> = <span class="variable">$buckets</span> | <span class="built_in">ForEach-Object</span> &#123;</span><br><span class="line">    <span class="variable">$outputBucket</span> = <span class="variable">$_</span>.Name</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$_</span>.Name <span class="operator">-notin</span> <span class="variable">$knownBuckets</span>) &#123;</span><br><span class="line">        <span class="built_in">Set-Location</span></span><br><span class="line">        <span class="variable">$outputBucket</span> += <span class="string">&#x27; &#x27;</span> + (<span class="variable">$_</span>.Source)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable">$outputBucket</span> = <span class="string">&#x27;scoop bucket add &#x27;</span> + <span class="variable">$outputBucket</span></span><br><span class="line">    <span class="variable">$outputBucket</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Pop-Location</span></span><br><span class="line"><span class="variable">$apps</span> = (scoop list)</span><br><span class="line"><span class="variable">$output</span> += <span class="string">&#x27;scoop install &#x27;</span> + (<span class="variable">$apps</span> | <span class="built_in">ForEach-Object</span> &#123; <span class="variable">$_</span>.Name &#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable">$output</span> | <span class="built_in">Out-File</span> <span class="literal">-FilePath</span> <span class="string">&#x27;install-scoop-softwares.ps1&#x27;</span> <span class="literal">-Encoding</span> utf8</span><br><span class="line"><span class="built_in">Write-Output</span> <span class="variable">$output</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>更多使用方法可以查看 <code>scoop help</code></p>
+<h3 id="问题">问题</h3>
+<p>WARN Uncommitted changes detected. Update aborted</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git -C <span class="string">&quot;<span class="subst">$(scoop prefix scoop)</span>&quot;</span> reset --hard</span><br></pre></td></tr></table></figure>
+<div class="callout callout-note">
+<div class="callout-title">
+参考：<a
+href="https://blog.captainz.cc/posts/scoop_winodws_cmd1.html">https://blog.captainz.cc/posts/scoop_winodws_cmd1.html</a>
+</div>
+</div>
+]]></content>
+  </entry>
+</search>

@@ -1182,6 +1182,43 @@ pre code {
 .use-motion .menu-item {
   visibility: hidden;
 }
+.github-corner :hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+.github-corner svg {
+  color: #fff;
+  fill: var(--theme-color);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 5;
+}
+@media (max-width: 991px) {
+  .github-corner {
+    display: none;
+  }
+  .github-corner svg {
+    color: var(--theme-color);
+    fill: #fff;
+  }
+  .github-corner .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+@keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  20%, 60% {
+    transform: rotate(-25deg);
+  }
+  40%, 80% {
+    transform: rotate(10deg);
+  }
+}
 @media (max-width: 991px) {
   .sidebar {
     left: -320px;
@@ -1221,7 +1258,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #fff;
+    background: #38ff4a;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -1525,9 +1562,6 @@ pre code {
 }
 .links-of-author a {
   font-size: 0.8125em;
-}
-.links-of-author i[class^='fa'] {
-  margin-right: 2px;
 }
 .cc-license .cc-opacity {
   border-bottom: 0;
@@ -2181,6 +2215,10 @@ pre code {
 .post-reward div span {
   display: block;
 }
+.post-reward div:hover span {
+  animation: next-roll 0.1s infinite linear;
+  pointer-events: none;
+}
 .post-reward img {
   display: inline-block;
   margin: 0.8em 2em 0;
@@ -2380,6 +2418,107 @@ ul.breadcrumb li:last-child {
 .tag-cloud-10 {
   border-bottom-color: #111;
   color: #111;
+}
+.search-active {
+  overflow: hidden;
+  margin-right: var(--dialog-scrollgutter, 0);
+}
+.search-pop-overlay {
+  background: rgba(0,0,0,0);
+  display: flex;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: visibility 0.4s, background 0.4s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 40;
+}
+.search-active .search-pop-overlay {
+  background: rgba(0,0,0,0.3);
+  visibility: visible;
+}
+.search-popup {
+  background: var(--card-bg-color);
+  border-radius: 5px;
+  height: 80%;
+  margin: auto;
+  transform: scale(0);
+  transition: transform 0.4s;
+  width: 700px;
+}
+.search-active .search-popup {
+  transform: scale(1);
+}
+@media (max-width: 767px) {
+  .search-popup {
+    border-radius: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+.search-popup .search-icon,
+.search-popup .popup-btn-close {
+  color: #999;
+  font-size: 18px;
+  padding: 0 10px;
+}
+.search-popup .popup-btn-close {
+  cursor: pointer;
+}
+.search-popup .popup-btn-close:hover .fa {
+  color: #222;
+}
+.search-popup .search-header {
+  background: #eee;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  padding: 5px;
+}
+.search-popup input.search-input {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  width: 100%;
+}
+.search-popup input.search-input::-webkit-search-cancel-button {
+  display: none;
+}
+.search-popup .search-result-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 55px);
+  overflow: auto;
+  padding: 5px 25px;
+}
+.search-popup .search-result-container hr {
+  flex-shrink: 0;
+  margin: 5px 0 10px;
+}
+.search-popup .search-result-container hr:first-child {
+  display: none;
+}
+.search-popup .search-result-list {
+  margin: 0 5px;
+  padding: 0;
+}
+.search-popup a.search-result-title {
+  font-weight: bold;
+}
+.search-popup p.search-result {
+  border-bottom: 1px dashed #ccc;
+  margin: 0 0 10px;
+  padding: 5px 0;
+}
+.search-popup .search-input-container {
+  flex-grow: 1;
+  padding: 2px;
+}
+.search-popup .search-result-icon {
+  color: #ccc;
+  margin: auto;
 }
 mark.search-keyword {
   background: transparent;
@@ -2608,7 +2747,6 @@ header.header {
   }
   .links-of-author-item {
     margin: 5px 0 0;
-    width: 50%;
   }
   .links-of-author-item a {
     border-bottom: 0;
@@ -2724,6 +2862,10 @@ header.header {
     padding: 10px 12px;
   }
 }
+.giscus {
+  max-width: unset;
+  box-sizing: border-box;
+}
 .post-body p a {
   color: #0593d3;
   border-bottom: none;
@@ -2732,10 +2874,93 @@ header.header {
   color: #0477ab;
   text-decoration: underline;
 }
-.fa-bilibili {
-  background: url("/images/bilibili.svg");
-  background-position: 50% 75%;
+.csdn {
+  background-image: url("/images/csdn.svg");
+  background-size: 1em 1em;
+  opacity: 0.55;
+  background-position: 0.05rem 0.2rem;
   background-repeat: no-repeat;
   height: 1rem;
   width: 1rem;
+  border-radius: 0rem;
+}
+.csdn:hover {
+  opacity: 1;
+}
+/* callout.css - 适用于 Hexo 的 Obsidian Callout 块样式 */
+.callout {
+  border-left: 4px solid #888;
+  background: #f8f9fa;
+  margin: 1.5em 0;
+  padding: 1em 1.2em 1em 1.2em;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  position: relative;
+  transition: background 0.2s;
+}
+.callout-title {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  font-size: 1.08em;
+  display: flex;
+  align-items: left;
+}
+.callout-content {
+  font-size: 1em;
+  color: #333;
+}
+/* 不同类型的 callout 颜色 */
+.callout-note {
+  border-color: #4e9af1;
+  background: #eaf4fe;
+}
+.callout-info {
+  border-color: #17a2b8;
+  background: #e8f7fa;
+}
+.callout-attention,
+.callout-warning {
+  border-color: #ffc107;
+  background: #fffbe6;
+}
+.callout-bug,
+.callout-danger {
+  border-color: #dc3545;
+  background: #fdeaea;
+}
+.callout-tip,
+.callout-success {
+  border-color: #28a745;
+  background: #eafaf1;
+}
+/* 可选：为 callout-title 添加图标（可自定义 SVG 或字体图标） */
+.callout-note .callout-title::before {
+  content: '📝';
+  margin-right: 0.5em;
+}
+.callout-info .callout-title::before {
+  content: 'ℹ️';
+  margin-right: 0.5em;
+}
+.callout-attention .callout-title::before,
+.callout-warning .callout-title::before {
+  content: '⚠️';
+  margin-right: 0.5em;
+}
+.callout-todo .callout-title::before {
+  content: '🔳';
+  margin-right: 0.5em;
+}
+.callout-danger .callout-title::before {
+  content: '❗';
+  margin-right: 0.5em;
+}
+.callout-bug .callout-title::before {
+  content: '🐞';
+  margin-right: 0.5em;
+}
+.callout-tip .callout-title::before,
+.callout-success .callout-title::before {
+  content: '✅';
+  margin-right: 0.5em;
 }
