@@ -138,6 +138,114 @@ settings.xml 中配置镜像如下：也可以在上述创建的 repository
       </categories>
   </entry>
   <entry>
+    <title>ADS</title>
+    <url>/%E8%BD%AF%E4%BB%B6/%E4%BB%BF%E7%9C%9F/ADS/</url>
+    <content><![CDATA[<div class="callout callout-abstract">
+<div class="callout-content">
+<p>本篇教程对于 ADS2022 及之前适用，ADS2023
+及之后更新了破解工具，至于最新版的 ADS 请参考 <a
+href="https://www.mr-wu.cn/keysight-ads-2024-update2-free-download/">吴川斌老师的博客</a>，同时本文还提及了许多问题的解决办法，比如无法安装，服务无法正常启动，以及检测到已安装等等
+<strong>倘若不是第一次安装，请先看下方的卸载章节，确保完全卸载以避免其它问题！！！</strong></p>
+</div>
+</div>
+<h2 id="安装">安装</h2>
+<p>首先需要下载 <a
+href="https://pan.baidu.com/s/1TpC4aShrlcxYnqlb0bjUrA?pwd=ry6s">安装包</a>，其中
+ADS2022.exe 为安装包，ADS2022_Crack.zip
+为对应的绿色文件压缩包，根据下面步骤一步一步安装即可</p>
+<ol type="1">
+<li>双击安装包，等待提取完毕会弹出如下界面，一路 Next 并 Accept
+到下一步对应的 Choose Install Set<img
+src="/images/software/ADS/ADS_I1.png" alt="ADS_I1.png" /></li>
+<li>这里是选择对应的安装组件，新手的话建议选择 Complete
+全安装，一般现在电脑的硬盘如果管理得当的话空间都会足够的，继续下一步
+<img src="/images/software/ADS/ADS_I2.png" alt="ADS_I2.png" /></li>
+<li>设置安装路径这里我就按照 <a
+href="/操作系统/Windows/服务/包管理/">包管理</a>
+中提到的规则一样安装到了 D 盘的 ProgramFiles 目录下，点击下一步 <img
+src="/images/software/ADS/ADS_I3.png" alt="ADS_I3.png" /></li>
+<li>这一步设置 EEsof_License_Tools 的路径，必须和第 3 步设置的 ADS2022
+路径在<strong>同一个盘</strong>下面，<strong>特别关键！！！</strong>，后来的第八步服务的启动如果不成功的话有一个原因就是这里，你可以参考我的路径设置，点击下一步进行安装，注意这里是
+<code>D:\ProgramFiles\Keysight\EEsofLicense_Tools</code>，截图有问题
+<img src="/images/software/ADS/ADS_I4.png" alt="ADS_I4.png" /></li>
+<li>如果没有任何问题的话，安装完成后会出现如下界面，点击 Done<img
+src="/images/software/ADS/ADS_I5.png" alt="ADS_I5.png" /></li>
+<li>弹窗出现需要执照，点击退出即可 <img
+src="/images/software/ADS/ADS_I6.png" alt="ADS_I6.png" /></li>
+<li>解压对应的破解安装包，其中的内容如下所示，下面的数字代表执行顺序，首先双击
+KesightLicense.reg 文件导入注册表 <img
+src="/images/software/ADS/ADS_C1.png" alt="ADS_C1.png" /></li>
+<li>而后将 EEsof_License_Tools 这个文件夹拷贝到路径
+<code>D:\ProgramFiles\Keysight\EEsofLicense_Tools</code>
+下，弹窗询问是否替换，确认替换两个文件，以管理员身份执行
+<code>D:\ProgramFiles\Keysight\EEsofLicense_Tools\bin\win32_64\server_install.bat</code>
+这个文件，在弹出的命令行窗口中显示服务启动成功即可，倘若出现意外检查第 4
+步路径设置 <img src="/images/software/ADS/ADS_C2.png"
+alt="ADS_C2.png" /></li>
+<li>执行破解文件夹中的 KesightLicensePatcher.exe 依次点击 Browse 选择第
+3 步设置的 ADS 安装路径，然后点击 Patch 等待下面的弹窗 patched
+successfully 即可 <img src="/images/software/ADS/ADS_C3.png"
+alt="ADS_C3.png" /></li>
+</ol>
+<h2 id="卸载">卸载</h2>
+<p>鉴于这类软件经常会出现卸载后无法再次正常安装的问题，所以介绍一下完全卸载的方式，可以用于解决如下问题：</p>
+<ul>
+<li><code>EEsof License tools</code> 路径无法修改</li>
+<li>ADS Previous version detected</li>
+<li>无法重新安装软件</li>
+</ul>
+<p>具体<strong>卸载步骤</strong>如下所示：</p>
+<ol type="1">
+<li>首先在之前执行 <code>server_install</code> 破解服务端的路径下执行
+<code>server_remove</code> 来关闭服务</li>
+<li>而后使用 Geek Uninstaller 之类的软件删除现有安装，如果没法找到 ADS
+的话，按照自己记得的安装路径，将对应的文件夹都删除，而后清理安装后产生的附加文件，如下所示，如果这些路径存在，则删除掉，清理一遍即可：
+<ol type="1">
+<li><code>C:\Program Files\KeySight</code></li>
+<li><code>C:\Program Files\Zero G Registry</code></li>
+<li><code>C:\Program Files\uninstallADS20XX</code></li>
+<li><code>C:\Program Files (x86)\KeySight</code></li>
+<li><code>C:\Program Files (x86)\Zero G Registry</code></li>
+<li><code>C:\Program Files (x86)\uninstallADS20XX</code></li>
+</ol></li>
+<li>最后清理对应的注册表项，按 win+r 弹出运行框，输入 regedit
+进入注册表中，将以下路径复制到上面的搜索框中，单击回车进入，将对应的项或者字符串删除即可：<img
+src="/images/System/Windows/regedit.png" alt="regedit.png" />
+<ol type="1">
+<li><code>计算机\HKEY_CURRENT_USER\Software\Agilent</code></li>
+<li><code>计算机\HKEY_CURRENT_USER\Software\Keysight</code></li>
+<li><code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Keysight</code></li>
+<li><code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Agilent</code></li>
+<li><code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Agilent</code></li>
+<li><code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Keysight</code></li>
+<li><code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\EEsof License tools</code></li>
+</ol></li>
+</ol>
+<h3 id="常用器件">常用器件</h3>
+<table>
+<thead>
+<tr class="header">
+<th>名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DC_Feed</td>
+<td>扼交电感</td>
+</tr>
+<tr class="even">
+<td>DC_Block</td>
+<td>阻直电容</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+  </entry>
+  <entry>
     <title>包管理</title>
     <url>/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/%E6%9C%8D%E5%8A%A1/%E5%8C%85%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<h2 id="安装路径">安装路径</h2>
