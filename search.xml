@@ -246,6 +246,24 @@ src="/images/System/Windows/regedit.png" alt="regedit.png" />
       </categories>
   </entry>
   <entry>
+    <title>接口大全</title>
+    <url>/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/%E6%8E%A5%E5%8F%A3%E5%A4%A7%E5%85%A8/</url>
+    <content><![CDATA[<p>常见的各种接口对应的专业名称，来源：公众号 芯片之家</p>
+<p><img src="/images/join/2.jpg" alt="810" /><img
+src="/images/join/3.jpg" alt="3.jpg" /><img src="/images/join/4.jpg"
+alt="4.jpg" /><img src="/images/join/5.jpg" alt="5.jpg" /><img
+src="/images/join/6.jpg" alt="6.jpg" /><img src="/images/join/7.jpg"
+alt="7.jpg" /><img src="/images/join/8.jpg" alt="8.jpg" /><img
+src="/images/join/9.jpg" alt="9.jpg" /><img src="/images/join/10.jpg"
+alt="10.jpg" /><img src="/images/join/11.jpg" alt="11.jpg" /><img
+src="/images/join/12.jpg" alt="12.jpg" /><img src="/images/join/13.jpg"
+alt="13.jpg" /><img src="/images/join/14.jpg" alt="14.jpg" /></p>
+]]></content>
+      <categories>
+        <category>嵌入式</category>
+      </categories>
+  </entry>
+  <entry>
     <title>包管理</title>
     <url>/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/%E6%9C%8D%E5%8A%A1/%E5%8C%85%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<h2 id="安装路径">安装路径</h2>
@@ -363,23 +381,5 @@ href="https://blog.captainz.cc/posts/scoop_winodws_cmd1.html">https://blog.capta
 </div>
 </div>
 ]]></content>
-  </entry>
-  <entry>
-    <title>接口大全</title>
-    <url>/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/%E6%8E%A5%E5%8F%A3%E5%A4%A7%E5%85%A8/</url>
-    <content><![CDATA[<p>常见的各种接口对应的专业名称，来源：公众号 芯片之家</p>
-<p><img src="/images/join/2.jpg" alt="810" /><img
-src="/images/join/3.jpg" alt="3.jpg" /><img src="/images/join/4.jpg"
-alt="4.jpg" /><img src="/images/join/5.jpg" alt="5.jpg" /><img
-src="/images/join/6.jpg" alt="6.jpg" /><img src="/images/join/7.jpg"
-alt="7.jpg" /><img src="/images/join/8.jpg" alt="8.jpg" /><img
-src="/images/join/9.jpg" alt="9.jpg" /><img src="/images/join/10.jpg"
-alt="10.jpg" /><img src="/images/join/11.jpg" alt="11.jpg" /><img
-src="/images/join/12.jpg" alt="12.jpg" /><img src="/images/join/13.jpg"
-alt="13.jpg" /><img src="/images/join/14.jpg" alt="14.jpg" /></p>
-]]></content>
-      <categories>
-        <category>嵌入式</category>
-      </categories>
   </entry>
 </search>
