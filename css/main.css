@@ -1285,7 +1285,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffdfd5;
+    background: #ffe8ff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2913,6 +2913,20 @@ header.header {
 }
 .csdn:hover {
   opacity: 1;
+}
+#hexo-blog-encrypt {
+  background: rgba(255,255,255,0.8);
+  padding: 20px;
+  border-radius: 8px;
+}
+#hexo-blog-encrypt input {
+  border: 1px solid #4a4a4a;
+  background: #b3b4b4;
+  color: #fff;
+}
+#hexo-blog-encrypt button {
+  background: #2196f3;
+  color: #fff;
 }
 /* callout.css - 适用于 Hexo 的 Obsidian Callout 块样式 */
 .callout {
