@@ -1,0 +1,81 @@
+/* callout.css - 适用于 Hexo 的 Obsidian Callout 块样式 */
+.callout {
+  border-left: 4px solid #888;
+  background: #f8f9fa;
+  margin: 1.5em 0;
+  padding: 1em 1.2em 1em 1.2em;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  position: relative;
+  transition: background 0.2s;
+}
+
+.callout-title {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  font-size: 1.08em;
+  display: flex;
+  align-items: left;
+}
+
+.callout-content {
+  font-size: 1em;
+  color: #333;
+}
+
+/* 不同类型的 callout 颜色 */
+.callout-note {
+  border-color: #4e9af1;
+  background: #eaf4fe;
+}
+.callout-info {
+  border-color: #17a2b8;
+  background: #e8f7fa;
+}
+.callout-attention,
+.callout-warning {
+  border-color: #ffc107;
+  background: #fffbe6;
+}
+.callout-bug,
+.callout-danger {
+  border-color: #dc3545;
+  background: #fdeaea;
+}
+.callout-tip,
+.callout-success {
+  border-color: #28a745;
+  background: #eafaf1;
+}
+
+/* 可选：为 callout-title 添加图标（可自定义 SVG 或字体图标） */
+.callout-note .callout-title::before {
+  content: '📝';
+  margin-right: 0.5em;
+}
+.callout-info .callout-title::before {
+  content: 'ℹ️';
+  margin-right: 0.5em;
+}
+.callout-attention .callout-title::before,
+.callout-warning .callout-title::before {
+  content: '⚠️';
+  margin-right: 0.5em;
+}
+.callout-todo .callout-title::before {
+  content: '🔳';
+  margin-right: 0.5em;
+}
+.callout-danger .callout-title::before {
+  content: '❗';
+  margin-right: 0.5em;
+}
+.callout-bug .callout-title::before {
+  content: '🐞';
+  margin-right: 0.5em;
+}
+.callout-tip .callout-title::before,
+.callout-success .callout-title::before {
+  content: '✅';
+  margin-right: 0.5em;
+}
