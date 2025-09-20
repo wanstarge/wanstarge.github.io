@@ -1,4 +1,6 @@
-/* callout.css - 适用于 Hexo 的 Obsidian Callout 块样式 */
+/* callout.css - 适用于 Hexo Butterfly 主题的 Obsidian Callout 块样式，支持自动收缩与暗色模式 */
+
+/* 基础样式 */
 .callout {
   border-left: 4px solid #888;
   background: #f8f9fa;
@@ -7,20 +9,53 @@
   border-radius: 6px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   position: relative;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
+  color: #333;
 }
 
+/* 可折叠样式 */
+.callout[data-collapsible] .callout-title {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding-left: 1.5em;
+}
+.callout[data-collapsible] .callout-title::before {
+  content: "▼";
+  font-size: 0.9em;
+  position: absolute;
+  left: 0.2em;
+  top: 0.1em;
+  transition: transform 0.2s;
+}
+.callout.collapsed .callout-title::before {
+  transform: rotate(-90deg);
+}
+.callout.collapsed .callout-content {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  transition: max-height 0.2s, opacity 0.2s;
+}
+.callout .callout-content {
+  max-height: 1000px;
+  opacity: 1;
+  transition: max-height 0.2s, opacity 0.2s;
+}
+
+/* 标题与内容 */
 .callout-title {
   font-weight: bold;
   margin-bottom: 0.5em;
   font-size: 1.08em;
   display: flex;
-  align-items: left;
+  align-items: center;
 }
-
 .callout-content {
   font-size: 1em;
-  color: #333;
+  color: inherit;
 }
 
 /* 不同类型的 callout 颜色 */
@@ -48,34 +83,66 @@
   background: #eafaf1;
 }
 
-/* 可选：为 callout-title 添加图标（可自定义 SVG 或字体图标） */
-.callout-note .callout-title::before {
+/* 图标 */
+.callout-note .callout-title::after {
   content: '📝';
-  margin-right: 0.5em;
+  margin-left: 0.5em;
 }
-.callout-info .callout-title::before {
+.callout-info .callout-title::after {
   content: 'ℹ️';
-  margin-right: 0.5em;
+  margin-left: 0.5em;
 }
-.callout-attention .callout-title::before,
-.callout-warning .callout-title::before {
+.callout-attention .callout-title::after,
+.callout-warning .callout-title::after {
   content: '⚠️';
-  margin-right: 0.5em;
+  margin-left: 0.5em;
 }
-.callout-todo .callout-title::before {
+.callout-todo .callout-title::after {
   content: '🔳';
-  margin-right: 0.5em;
+  margin-left: 0.5em;
 }
-.callout-danger .callout-title::before {
+.callout-danger .callout-title::after {
   content: '❗';
-  margin-right: 0.5em;
+  margin-left: 0.5em;
 }
-.callout-bug .callout-title::before {
+.callout-bug .callout-title::after {
   content: '🐞';
-  margin-right: 0.5em;
+  margin-left: 0.5em;
 }
-.callout-tip .callout-title::before,
-.callout-success .callout-title::before {
+.callout-tip .callout-title::after,
+.callout-success .callout-title::after {
   content: '✅';
-  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
+
+/* 暗色模式适配 */
+body.dark .callout {
+  background: #23272e;
+  color: #eee;
+}
+body.dark .callout-content {
+  color: #eee;
+}
+body.dark .callout-note {
+  background: #22334a;
+  border-color: #4e9af1;
+}
+body.dark .callout-info {
+  background: #1e3a42;
+  border-color: #17a2b8;
+}
+body.dark .callout-attention,
+body.dark .callout-warning {
+  background: #3a2e1e;
+  border-color: #ffc107;
+}
+body.dark .callout-bug,
+body.dark .callout-danger {
+  background: #3a2323;
+  border-color: #dc3545;
+}
+body.dark .callout-tip,
+body.dark .callout-success {
+  background: #1e4230;
+  border-color: #28a745;
 }
