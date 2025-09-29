@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wanxingge.site/archives/index.html</loc>
+    
+    <lastmod>2025-09-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wanxingge.site/about/index.html</loc>
     
     <lastmod>2025-09-24</lastmod>
@@ -175,7 +184,7 @@
 
   <url>
     <loc>https://wanxingge.site/</loc>
-    <lastmod>2025-09-24</lastmod>
+    <lastmod>2025-09-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -185,35 +194,35 @@
   
   <url>
     <loc>https://wanxingge.site/categories/PCB/</loc>
-    <lastmod>2025-09-24</lastmod>
+    <lastmod>2025-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wanxingge.site/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</loc>
-    <lastmod>2025-09-24</lastmod>
+    <lastmod>2025-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wanxingge.site/categories/%E9%80%9A%E7%94%A8/</loc>
-    <lastmod>2025-09-24</lastmod>
+    <lastmod>2025-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wanxingge.site/categories/%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2025-09-24</lastmod>
+    <lastmod>2025-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wanxingge.site/categories/Linux/</loc>
-    <lastmod>2025-09-24</lastmod>
+    <lastmod>2025-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
