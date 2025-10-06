@@ -38,15 +38,6 @@
   </url>
   
   <url>
-    <loc>https://wanxingge.site/about/index.html</loc>
-    
-    <lastmod>2025-10-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://wanxingge.site/archives/index.html</loc>
     
     <lastmod>2025-10-06</lastmod>
@@ -56,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://wanxingge.site/69c3279c.html</loc>
+    <loc>https://wanxingge.site/about/index.html</loc>
     
     <lastmod>2025-10-06</lastmod>
     
@@ -66,6 +57,15 @@
   
   <url>
     <loc>https://wanxingge.site/e86eb4aa.html</loc>
+    
+    <lastmod>2025-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wanxingge.site/69c3279c.html</loc>
     
     <lastmod>2025-10-06</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://wanxingge.site/4f3869d.html</loc>
+    <loc>https://wanxingge.site/a0a49b4d.html</loc>
     
     <lastmod>2025-10-06</lastmod>
     
@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://wanxingge.site/a0a49b4d.html</loc>
+    <loc>https://wanxingge.site/4f3869d.html</loc>
     
     <lastmod>2025-10-06</lastmod>
     
@@ -193,13 +193,6 @@
 
   
   <url>
-    <loc>https://wanxingge.site/categories/%E9%80%9A%E7%94%A8/</loc>
-    <lastmod>2025-10-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://wanxingge.site/categories/PCB/</loc>
     <lastmod>2025-10-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -208,6 +201,13 @@
   
   <url>
     <loc>https://wanxingge.site/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</loc>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wanxingge.site/categories/%E9%80%9A%E7%94%A8/</loc>
     <lastmod>2025-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
