@@ -1,0 +1,6 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://wanxingge.site/sitemap.xml
+Sitemap: https://wanxingge.site/baidusitemap.xml
