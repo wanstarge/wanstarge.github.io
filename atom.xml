@@ -24,15 +24,58 @@
     <updated>2025-10-06T10:24:24.519Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;div class=&quot;callout callout-abstract&quot; data-collapsible&gt;
 &lt;div class=&quot;callout-content&quot;&gt;
-&lt;p dir=&quot;auto&quot;&gt;本篇教程对于 ADS2022 及之前适用，ADS2023</summary>
-        
-      
+&lt;p dir=&quot;auto&quot;&gt;本篇教程对于 ADS2022 及之前适用，ADS2023 及之后更新了破解工具，至于最新版的 ADS 请参考 &lt;a data-tooltip-position=&quot;top&quot; aria-label=&quot;https://www.mr-wu.cn/keysight-ads-2024-update2-free-download/&quot; rel=&quot;noopener nofollow&quot; class=&quot;external-link&quot; href=&quot;https://www.mr-wu.cn/keysight-ads-2024-update2-free-download/&quot; target=&quot;_blank&quot;&gt;吴川斌老师的博客&lt;/a&gt;，同时本文还提及了许多问题的解决办法，比如无法安装，服务无法正常启动，以及检测到已安装等等
+&lt;strong&gt;倘若不是第一次安装，请先看下方的卸载章节，确保完全卸载以避免其它问题！！！&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;安装&quot;&gt;安装&lt;/h2&gt;
+&lt;p&gt;首先需要下载 &lt;a href=&quot;https://pan.baidu.com/s/1TpC4aShrlcxYnqlb0bjUrA?pwd=ry6s&quot;&gt;安装包&lt;/a&gt;，其中 ADS2022.exe 为安装包，ADS2022_Crack.zip 为对应的绿色文件压缩包，根据下面步骤一步一步安装即可&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;双击安装包，等待提取完毕会弹出如下界面，一路 Next 并 Accept 到下一步对应的 Choose Install Set&lt;img src=&quot;/images/software/ADS/ADS_I1.png&quot; alt=&quot;ADS_I1.png&quot;&gt;&lt;/li&gt;
+&lt;li&gt;这里是选择对应的安装组件，新手的话建议选择 Complete 全安装，一般现在电脑的硬盘如果管理得当的话空间都会足够的，继续下一步 &lt;img src=&quot;/images/software/ADS/ADS_I2.png&quot; alt=&quot;ADS_I2.png&quot;&gt;&lt;/li&gt;
+&lt;li&gt;设置安装路径这里我就按照 &lt;a href=&quot;/a0a49b4d.html&quot; title=&quot;包管理&quot;&gt;包管理&lt;/a&gt; 中提到的规则一样安装到了 D 盘的 ProgramFiles 目录下，点击下一步 &lt;img src=&quot;/images/software/ADS/ADS_I3.png&quot; alt=&quot;ADS_I3.png&quot;&gt;&lt;/li&gt;
+&lt;li&gt;这一步设置 EEsof_License_Tools 的路径，必须和第 3 步设置的 ADS2022 路径在&lt;strong&gt;同一个盘&lt;/strong&gt;下面，&lt;strong&gt;特别关键！！！&lt;/strong&gt;，后来的第八步服务的启动如果不成功的话有一个原因就是这里，你可以参考我的路径设置，点击下一步进行安装，注意这里是 &lt;code&gt;D:&#92;ProgramFiles&#92;Keysight&#92;EEsofLicense_Tools&lt;/code&gt;，截图有问题 &lt;img src=&quot;/images/software/ADS/ADS_I4.png&quot; alt=&quot;ADS_I4.png&quot;&gt;&lt;/li&gt;
+&lt;li&gt;如果没有任何问题的话，安装完成后会出现如下界面，点击 Done&lt;img src=&quot;/images/software/ADS/ADS_I5.png&quot; alt=&quot;ADS_I5.png&quot;&gt;&lt;/li&gt;
+&lt;li&gt;弹窗出现需要执照，点击退出即可 &lt;img src=&quot;/images/software/ADS/ADS_I6.png&quot; alt=&quot;ADS_I6.png&quot;&gt;&lt;/li&gt;
+&lt;li&gt;解压对应的破解安装包，其中的内容如下所示，下面的数字代表执行顺序，首先双击 KesightLicense.reg 文件导入注册表 &lt;img src=&quot;/images/software/ADS/ADS_C1.png&quot; alt=&quot;ADS_C1.png&quot;&gt;&lt;/li&gt;
+&lt;li&gt;而后将 EEsof_License_Tools 这个文件夹拷贝到路径 &lt;code&gt;D:&#92;ProgramFiles&#92;Keysight&#92;EEsofLicense_Tools&lt;/code&gt; 下，弹窗询问是否替换，确认替换两个文件，以管理员身份执行 &lt;code&gt;D:&#92;ProgramFiles&#92;Keysight&#92;EEsofLicense_Tools&#92;bin&#92;win32_64&#92;server_install.bat&lt;/code&gt; 这个文件，在弹出的命令行窗口中显示服务启动成功即可，倘若出现意外检查第 4 步路径设置 &lt;img src=&quot;/images/software/ADS/ADS_C2.png&quot; alt=&quot;ADS_C2.png&quot;&gt;&lt;/li&gt;
+&lt;li&gt;执行破解文件夹中的 KesightLicensePatcher.exe 依次点击 Browse 选择第 3 步设置的 ADS 安装路径，然后点击 Patch 等待下面的弹窗 patched successfully 即可 &lt;img src=&quot;/images/software/ADS/ADS_C3.png&quot; alt=&quot;ADS_C3.png&quot;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;卸载&quot;&gt;卸载&lt;/h2&gt;
+&lt;p&gt;鉴于这类软件经常会出现卸载后无法再次正常安装的问题，所以介绍一下完全卸载的方式，可以用于解决如下问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;EEsof License tools&lt;/code&gt; 路径无法修改&lt;/li&gt;
+&lt;li&gt;ADS Previous version detected&lt;/li&gt;
+&lt;li&gt;无法重新安装软件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;具体&lt;strong&gt;卸载步骤&lt;/strong&gt;如下所示：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先在之前执行 &lt;code&gt;server_install&lt;/code&gt; 破解服务端的路径下执行 &lt;code&gt;server_remove&lt;/code&gt; 来关闭服务&lt;/li&gt;
+&lt;li&gt;而后使用 Geek Uninstaller 之类的软件删除现有安装，如果没法找到 ADS 的话，按照自己记得的安装路径，将对应的文件夹都删除，而后清理安装后产生的附加文件，如下所示，如果这些路径存在，则删除掉，清理一遍即可：
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;C:&#92;Program Files&#92;KeySight&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:&#92;Program Files&#92;Zero G Registry&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:&#92;Program Files&#92;uninstallADS20XX&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:&#92;Program Files (x86)&#92;KeySight&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:&#92;Program Files (x86)&#92;Zero G Registry&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:&#92;Program Files (x86)&#92;uninstallADS20XX&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;最后清理对应的注册表项，按 win+r 弹出运行框，输入 regedit 进入注册表中，将以下路径复制到上面的搜索框中，单击回车进入，将对应的项或者字符串删除即可：&lt;img src=&quot;/images/System/Windows/regedit.png&quot; alt=&quot;regedit.png&quot;&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;计算机&#92;HKEY_CURRENT_USER&#92;Software&#92;Agilent&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;计算机&#92;HKEY_CURRENT_USER&#92;Software&#92;Keysight&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;计算机&#92;HKEY_LOCAL_MACHINE&#92;SOFTWARE&#92;Keysight&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;计算机&#92;HKEY_LOCAL_MACHINE&#92;SOFTWARE&#92;Agilent&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;计算机&#92;HKEY_LOCAL_MACHINE&#92;SOFTWARE&#92;WOW6432Node&#92;Agilent&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;计算机&#92;HKEY_LOCAL_MACHINE&#92;SOFTWARE&#92;WOW6432Node&#92;Keysight&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;计算机&#92;HKEY_LOCAL_MACHINE&#92;SOFTWARE&#92;Microsoft&#92;Windows&#92;CurrentVersion&#92;Uninstall&#92;EEsof License tools&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;常用器件&quot;&gt;常用器件&lt;/h3&gt;</summary>
     
     
     
@@ -81,15 +124,20 @@
     <updated>2025-10-06T10:24:24.517Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;由于系统刚安装的时候无法识别 ntfs 格式的 U 盘，还是放到网络上会比较好找一点，同时也顺带整理了其他环境所需要的镜像&lt;/p&gt;
 &lt;h2 id=&quot;CentOS&quot;&gt;CentOS&lt;/h2&gt;
-&lt;p&gt;首先执行 &lt;code&gt;sudo find /etc/yum.repos.d/</summary>
-        
-      
+&lt;p&gt;首先执行 &lt;code&gt;sudo find /etc/yum.repos.d/ -name &amp;quot;*.bak&amp;quot; -exec mv &amp;#123;&amp;#125; &amp;#123;&amp;#125;.bak &#92;;&lt;/code&gt; 来备份原有的安装源文件，而后针对对应的系统执行下方命令获取对应镜像源&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;centos8&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;curl -o /etc/yum.repos.d/Centos-vault-8.5.2111.repo https://mirrors.aliyun.com/repo/Centos-vault-8.5.2111.repo&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;curl -o /etc/yum.repos.d/epel-archive-8.repo https://mirrors.aliyun.com/repo/epel-archive-8.repo&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;centos7&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;再执行 &lt;code&gt;sudo yum clean all &amp;amp;&amp;amp; yum makecache&lt;/code&gt; 之后就可以下载自己需要的安装包了&lt;/p&gt;
+&lt;h2 id=&quot;swig￼8&quot;&gt;&lt;a href=&quot;/7be7930f.html&quot; title=&quot;Ubuntu&quot;&gt;Ubuntu&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在 Ubuntu 24.04 之前，Ubuntu 的软件源配置文件使用传统的 One-Line-Style，路径为 &lt;code&gt;/etc/apt/sources.list&lt;/code&gt;；从 Ubuntu 24.04 开始，Ubuntu 的软件源配置文件变更为 DEB822 格式，路径为 &lt;code&gt;/etc/apt/sources.list.d/ubuntu.sources&lt;/code&gt;，各自对应命令如下：&lt;/p&gt;</summary>
     
     
     
@@ -136,14 +184,40 @@
     <updated>2025-10-06T10:24:24.516Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;h2 id=&quot;安装路径&quot;&gt;安装路径&lt;/h2&gt;
-&lt;p&gt;windows 默认的应用安装路径是由环境变量路径 &lt;code&gt;计算机&#92;HKEY_LOCAL_MACHINE&#92;SOFTWARE&#92;Microsoft&#92;Windows&#92;CurrentVersion&lt;/code&gt; 下的</summary>
-        
-      
+&lt;p&gt;windows 默认的应用安装路径是由环境变量路径 &lt;code&gt;计算机&#92;HKEY_LOCAL_MACHINE&#92;SOFTWARE&#92;Microsoft&#92;Windows&#92;CurrentVersion&lt;/code&gt; 下的 ProgramFilesDir 这一变量来决定的，修改其值既可以修改程序的默认安装路径。&lt;/p&gt;
+&lt;div class=&quot;callout callout-attention&quot; data-collapsible&gt;
+&lt;div class=&quot;callout-title&quot;&gt;后经测试不建议修改，统一软件安装规范为直接修改安装路径&lt;/div&gt;
+&lt;div class=&quot;callout-content&quot;&gt;
+&lt;ol&gt;
+&lt;li dir=&quot;auto&quot;&gt;修改盘符 C 为目的安装的磁盘&lt;/li&gt;
+&lt;li dir=&quot;auto&quot;&gt;并将其原有路径中的空格进行删除&lt;/li&gt;
+&lt;li dir=&quot;auto&quot;&gt;例如 &lt;code&gt;C:&#92;Program Files&#92;...&lt;/code&gt; 改为 &lt;code&gt;D:&#92;ProgramFiles&#92;...&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;choco&quot;&gt;choco&lt;/h2&gt;
+&lt;p&gt;默认安装位置通过以下几个环境变量进行指定，具体参考 &lt;a href=&quot;https://docs.chocolatey.org/en-us/getting-started&quot;&gt;Getting Started&lt;/a&gt;,可安装的包参考 &lt;a href=&quot;https://community.chocolatey.org/packages&quot;&gt;Packages&lt;/a&gt;，会有具体教程&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;一些包会默认装在 &lt;code&gt;ChocolateyInstall&#92;lib&lt;/code&gt; 目录下；&lt;/li&gt;
+&lt;li&gt;其它一些基于 windows 下的安装包比如 MSI 会被安装在 C 盘下的 &lt;code&gt;Program Files&lt;/code&gt; 文件夹里；&lt;/li&gt;
+&lt;li&gt;还有一些数据包会被装在 &lt;code&gt;$env:ChocolateyBinRoot&lt;/code&gt; 目录下，如果这个环境变量不存在，包将会被创建在 &lt;code&gt;c:&#92;tools&lt;/code&gt; 目录下。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;callout callout-note&quot; data-collapsible&gt;
+&lt;div class=&quot;callout-title&quot;&gt;修改方法&lt;/div&gt;
+&lt;div class=&quot;callout-content&quot;&gt;
+&lt;ol&gt;
+&lt;li dir=&quot;auto&quot;&gt;对于第一种和第三种情况，我们进行设置对应的环境变量即可，即 &lt;code&gt;ChocolateyInstall&lt;/code&gt; 和 &lt;code&gt;ChocolateyBinRoot&lt;/code&gt;&lt;/li&gt;
+&lt;li dir=&quot;auto&quot;&gt;而对于第二种情况，我们需要通过指令传递安装路径的，比如 &lt;code&gt;choco install llvm -ia &quot;&#39;/D=D:&#92;software&#92;llvm&#39;&quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li dir=&quot;auto&quot;&gt;由于 choco 的一些需要的功能需要收费，且总体体验不能够高度的自主可控，转用 Scoop&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;winget&quot;&gt;winget&lt;/h2&gt;
+&lt;p&gt;winget 是微软推出的一款旨在实现 windows 下的包管理的工具，但是其目前的包数量仍较少，且对代理的支持效果较差，国内用户体验感较差，一些基础的使用尝试如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;winget settings 打开配置文件&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
@@ -190,16 +264,25 @@
     <updated>2025-10-06T10:24:24.514Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&quot;/images/PCB/OSC2.jpg&quot; alt=&quot;OSC2.jpg&quot;&gt;&lt;/p&gt;
 &lt;div class=&quot;callout callout-note&quot; data-collapsible&gt;
-&lt;div</summary>
-        
-      
+&lt;div class=&quot;callout-content&quot;&gt;
+&lt;p dir=&quot;auto&quot;&gt;补充：并联电阻不能太小，串联电阻不能太大。否则，在温度较低的情况下不易起振, 1MΩ电阻适用于以下问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li dir=&quot;auto&quot;&gt;当发生程序启动慢或不运行时，建议给晶振并联 1MΩ的电阻&lt;/li&gt;
+&lt;li dir=&quot;auto&quot;&gt;在低温环境下振荡电路阻抗也会发生变化，当阻抗增加到一定程度时，晶振就会发生起振困难或不起振现象。这时，我们也需要给晶振并联 1MΩ电阻&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;晶振参数以及匹配电容的计算&quot;&gt;晶振参数以及匹配电容的计算&lt;/h2&gt;
+&lt;p&gt;负载电容&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;katex-display&quot;&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;≅&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;D&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;D&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;C_{L}&#92;cong&#92;frac{C_{G}*C_{D}}{C_{G}+C_{D}}+C_{S}
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.8333em;vertical-align:-0.15em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.07153em;&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.3283em;&quot;&gt;&lt;span style=&quot;top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;L&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.15em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;≅&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2778em;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:2.1963em;vertical-align:-0.836em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mopen nulldelimiter&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mfrac&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:1.3603em;&quot;&gt;&lt;span style=&quot;top:-2.314em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:3em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.07153em;&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.3283em;&quot;&gt;&lt;span style=&quot;top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;G&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.15em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2222em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mbin&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2222em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.07153em;&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.3283em;&quot;&gt;&lt;span style=&quot;top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.02778em;&quot;&gt;D&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.15em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;top:-3.23em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:3em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;frac-line&quot; style=&quot;border-bottom-width:0.04em;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;top:-3.677em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:3em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.07153em;&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.3283em;&quot;&gt;&lt;span style=&quot;top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;G&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.15em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2222em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mbin&quot;&gt;∗&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2222em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.07153em;&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.3283em;&quot;&gt;&lt;span style=&quot;top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.02778em;&quot;&gt;D&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.15em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.836em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mclose nulldelimiter&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2222em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mbin&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2222em;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.8333em;vertical-align:-0.15em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.07153em;&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t vlist-t2&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.3283em;&quot;&gt;&lt;span style=&quot;top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot; style=&quot;margin-right:0.05764em;&quot;&gt;S&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-s&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.15em;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/PCB/OSC1.jpg&quot; alt=&quot;OSC1.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;即负载电容跟晶体振荡电路输入管脚到 GND 的总电容 CG 、晶体振荡电路输出管脚到 GND 的总电容 CD 以及晶体本身的并联电容 CS 有关。&lt;/p&gt;
+&lt;p&gt;我们知道晶体振荡电路输入管脚到 GND 的总电容一般由以下几部分组成：&lt;/p&gt;
+&lt;p&gt;1.需要外加晶振的单片机或其他 IC 管脚到 GND 之间的寄生电容 Ci；&lt;/p&gt;</summary>
     
     
     
